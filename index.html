@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Запрошення на весілля</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #f3efe8, #ffffff);
+            color: #212322;
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+        }
+
+        .container {
+            max-width: 620px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            color: #44693D;
+            margin: 0;
+        }
+
+        .date {
+            font-size: 1.3em;
+            margin: 10px 0;
+        }
+
+        .location {
+            font-size: 1.1em;
+            color: #6b8f55;
+        }
+
+        section {
+            margin-bottom: 25px;
+            animation: fadeUp 1s ease;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            border-bottom: 2px solid #e2e2e2;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        .palette {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .color {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+        }
+
+        .qr {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .qr img {
+            max-width: 150px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #44693D;
+            padding-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Михайло & Анастасія</h1>
+            <p class="date">19 липня 2025</p>
+            <p class="location">Ресторан-курорт «Дубровський»</p>
+        </header>
+
+        <section class="greeting">
+            <p>Привіт! Нам надзвичайно приємно запросити вас на наше весілля 💍</p>
+            <p>Час збору гостей: <strong>15:30</strong></p>
+        </section>
+
+        <section class="details">
+            <h2>Деталі</h2>
+            <p>Будь ласка, підтвердіть свою присутність до <strong>15 липня</strong>.</p>
+            <p>Замість квітів ви можете принести пляшечку вина, яку ми відкриємо на одну з річниць 🍷</p>
+            <p>Якщо ви бажаєте зробити подарунок, ми будемо щасливі прийняти <em>ваші теплі побажання у конверті</em> 💌
+            </p>
+        </section>
+
+        <section class="dresscode">
+            <h2>Dress Code</h2>
+            <p>Будемо раді, якщо ви підтримаєте кольорову палітру весілля у вашому вбранні.</p>
+            <div class="palette">
+                <div class="color" style="background-color: #212322;"></div>
+                <div class="color" style="background-color: #D9D9D6;"></div>
+                <div class="color" style="background-color: #FFFFFF;"></div>
+                <div class="color" style="background-color: #44693D;"></div>
+            </div>
+        </section>
+
+        <section class="qr">
+            <h2>Як нас знайти</h2>
+            <p>Скануйте QR-код, щоб відкрити локацію на карті:</p>
+            <a href="https://maps.app.goo.gl/JUUNy9yt5Mp487986" target="_blank">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://maps.app.goo.gl/JUUNy9yt5Mp487986&size=150x150"
+                    alt="QR-код Google Maps">
+            </a>
+        </section>
+
+        <footer>
+            <p>З нетерпінням чекаємо зустрічі з вами!</p>
+        </footer>
+    </div>
+</body>
+
+</html>
