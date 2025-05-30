@@ -416,6 +416,7 @@
       };
 
       fetch("https://script.google.com/macros/s/AKfycbxsRqu9fWBu9HvMW0ZhumANhgY823nu9-9fOk1r3x1zRW3HZHVk0QlHdkSySgqXkJ38/exec", {
+        redirect: "follow",
         method: "POST",
         body: JSON.stringify(data),
         headers: {
