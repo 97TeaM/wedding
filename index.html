@@ -423,10 +423,7 @@
           "Content-Type": "text/plain;charset=utf-8"
         }
       })
-        .then(res => res.json())
-        .then(res => {
-          console.log("Сервер відповів:", res);
-        });
+      document.getElementById("rsvp-form").innerHTML = "<p>Дякуємо! Ми отримали вашу відповідь 🥳</p>";
     });
   </script>
 </body>
