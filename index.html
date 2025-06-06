@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Запрошення на весілля</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
     rel="stylesheet" />
   <style>
     *,
@@ -16,22 +16,33 @@
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background: linear-gradient(135deg, #f3efe8, #ffffff);
-      color: rgb(105, 55, 34);
-      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      background: linear-gradient(135deg, #fffafc, #fefefe);
+      color: #4b3d36;
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 720px;
+      max-width: 760px;
       margin: 40px auto;
       padding: 30px;
-      background-color: rgba(255, 244, 204, 0.187);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      border-radius: 20px;
-      animation: fadeIn 1.5s ease forwards;
+      background: #ffffff;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-header,
+    .dresscode-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      gap: 12px
+    }
+
+    .form-header img,
+    .dresscode-header img {
+      height: 50px;
+      object-fit: contain;
+      margin-top: 14px;
     }
 
     header {
@@ -40,237 +51,281 @@
     }
 
     header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.2rem;
-      color: #44693D;
-      margin: 0;
-      font-weight: 400;
-    }
-
-    .date {
-      font-size: 1.4rem;
-      margin: 10px 0;
-      color: #6b8f55;
+      font-size: 3rem;
+      margin: 10px 0 20px;
+      font-weight: 700;
+      color: #4b3d36;
     }
 
     header img {
       width: 100%;
-      max-height: 320px;
-      object-fit: cover;
-      border-radius: 16px;
-      margin-top: 20px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      display: block;
-    }
-
-    section {
-      margin-bottom: 30px;
-      animation: fadeUp 1s ease forwards;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
 
     h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.2rem;
-      color: rgb(105, 55, 34);
-      margin: 0 0 10px;
-      border-bottom: 2px solid #e2e2e2;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #4b3d36;
+      text-align: center;
+      margin: 30px 0 15px;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+      text-align: center
+    }
+
+    .wedding-day {
+      position: relative;
+      /* щоб псевдоелемент позиціонувався відносно цього блока */
+      background: url('https://i.ibb.co/wN6V3wwc/image.png') center/cover no-repeat;
+      color: #fff;
+      padding: 60px 30px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .wedding-day::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      width: 150px;
+      height: 150px;
+      background: url('https://i.ibb.co/HpCd0Rjc/image.png') no-repeat center/contain;
+      pointer-events: none;
+      animation: flickerPattern 3s linear infinite;
+    }
+
+    @keyframes flickerPattern {
+      0% {
+        opacity: 1;
+      }
+
+      5% {
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      15% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      60% {
+        opacity: 1;
+      }
+
+      75% {
+        opacity: 0;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+
+    .wedding-day h2 {
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 0 1px 4px rgb(0, 0, 0);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.4);
       padding-bottom: 8px;
-      font-weight: 400;
     }
 
     .schedule p {
-      margin: 5px 0;
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 0 1px 4px rgb(0, 0, 0);
+    }
+
+    .time {
+      display: inline-block;
+      min-width: 70px;
       font-weight: 700;
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-
-    form input[type="text"],
-    form input[type="checkbox"] {
-      vertical-align: middle;
-    }
-
-    form input[type="text"] {
-      width: 100%;
-      padding: 8px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      margin-top: 4px;
-      font-size: 1rem;
-      font-family: inherit;
     }
 
     .palette {
       display: flex;
       justify-content: center;
       gap: 15px;
-      margin-top: 10px;
+      margin: 20px 0;
     }
 
     .color {
       width: 40px;
       height: 40px;
+      border-radius: 25%;
+      border: 2px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    form label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: 600;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
       border-radius: 8px;
-      border: 2px solid #ddd;
+      font-size: 1rem;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    fieldset {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+
+    legend {
+      font-weight: 700;
     }
 
     button[type="submit"] {
-      background-color: #44693D;
+      margin-top: 20px;
+      background-color: #4b3d36;
       color: #fff;
+      padding: 12px 24px;
       font-size: 1.1rem;
       font-weight: 600;
-      padding: 12px 24px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      font-family: 'Playfair Display', serif;
-      margin-top: 20px;
-      display: block;
-      width: 100%;
-      max-width: 300px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     button[type="submit"]:hover {
-      background-color: #5d8c4f;
+      background-color: #3a2f29;
       transform: translateY(-2px);
     }
 
     button[type="submit"]:active {
-      background-color: #36572d;
       transform: translateY(1px);
     }
 
-    .wedding-day {
-      position: relative;
-      background: linear-gradient(rgba(33, 35, 34, 0.6), rgba(33, 35, 34, 0.6)),
-        url('https://i.ibb.co/qLHG2wY1/image.png') center/cover no-repeat;
-      color: #fff;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-      padding: 60px 30px;
-      margin-bottom: 30px;
-      text-align: center;
-      animation: fadeUp 1s ease forwards;
-    }
-
-    .wedding-day h2 {
-      color: #fff;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-      margin-bottom: 20px;
-      font-weight: 400;
-    }
-
-    .wedding-day .schedule p {
-      color: #f0f0f0;
-      font-weight: 600;
-    }
-
-    .form-header,
-    .dresscode-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .form-header h2,
-    .dresscode-header h2 {
-      margin: 0;
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.2rem;
-      border-bottom: 2px solid #e2e2e2;
-      padding-bottom: 8px;
-      font-weight: 400;
-    }
-
-    .form-header img,
-    .dresscode-header img {
-      width: 100px;
-      height: auto;
-      object-fit: contain;
-      display: block;
-    }
-
-    .location {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .location a {
-      font-weight: 700;
-      text-decoration: none;
-      color: #44693D;
-      font-size: 1.2rem;
-      transition: color 0.3s ease;
-    }
-
-    .location a:hover,
-    .location a:focus {
-      color: #6b8f55;
-      outline: none;
-      text-decoration: underline;
-    }
-
-    .photo-frame {
-      position: relative;
-      margin-top: 30px;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .photo-frame::before {
-      content: '';
-      position: absolute;
-      top: 8px;
-      bottom: 8px;
-      left: 8px;
-      right: 8px;
-      border: 2px solid #9c8562;
-      border-radius: 30px;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .photo-frame img {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-height: 320px;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    }
-
     footer {
+      margin-top: 40px;
       text-align: center;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 1.2rem;
-      color: #44693D;
-      padding-top: 20px;
+      color: #4b3d36;
+    }
+
+    .location-button {
+      display: inline-block;
+      text-align: center;
+      background-color: #4b3d36;
+      color: #fff;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      outline: none;
+      user-select: none;
+      margin-top: 1rem;
+    }
+
+    .location-button:hover {
+      background-color: #3a2f29;
+      transform: translateY(-2px);
+    }
+
+    .location-button:active {
+      transform: translateY(1px);
+    }
+
+    .location-button:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border: 8px solid transparent;
+      background:
+        url("https://www.transparenttextures.com/patterns/flowers.png") repeat,
+        #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 8px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 600px) {
+
+      header h1,
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .container {
+        padding: 20px;
+        margin: 20px;
+      }
+    }
+
+    :root {
+      --fade-in: fadeIn 1s ease forwards;
+      --slide-up: slideUp 1s ease forwards;
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(-10px);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
       }
     }
 
-    @keyframes fadeUp {
+    @keyframes slideUp {
       from {
         opacity: 0;
         transform: translateY(20px);
@@ -282,22 +337,101 @@
       }
     }
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px;
-        margin: 20px;
+    .container {
+      animation: var(--fade-in);
+    }
+
+    header img,
+    .photo-frame img,
+    .gallery-item img {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .wedding-day,
+    .dresscode,
+    .details,
+    .form {
+      animation: var(--slide-up);
+    }
+
+    h2,
+    h1,
+    p {
+      animation: var(--fade-in);
+    }
+
+    body {
+      background: linear-gradient(135deg, #fef9f6, #f8f1ee);
+      color: #4b3d36;
+    }
+
+    h1,
+    h2 {
+      color: #4b3d36;
+    }
+
+    .wedding-day {
+      background: url('https://i.ibb.co/wN6V3wwc/image.png') center/cover no-repeat;
+      background-blend-mode: overlay;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .palette .color {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      border: none;
+    }
+
+    .location-button,
+    button[type="submit"] {
+      transition: all 0.3s ease;
+    }
+
+    .location-button:hover,
+    button[type="submit"]:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .time {
+      font-weight: 700;
+      animation-name: blink;
+      animation-duration: var(--blink-duration, 3s);
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+      will-change: opacity, color;
+      user-select: none;
+      transition: color 0.3s ease;
+      color: var(--color-1, #ffffff);
+    }
+
+    p:nth-child(2)>.time {
+      animation-delay: 1s;
+      color: var(--color-2, #ffffff);
+    }
+
+    p:nth-child(3)>.time {
+      animation-delay: 2s;
+      color: var(--color-3, #ffffff);
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: var(--blink-opacity-max, 1);
       }
 
-      header h1,
-      .form-header h2,
-      .dresscode-header h2,
-      h2 {
-        font-size: 2.2rem;
-      }
-
-      .form-header img,
-      .dresscode-header img {
-        width: 80px;
+      50% {
+        opacity: var(--blink-opacity-min, 0.2);
       }
     }
   </style>
@@ -306,18 +440,104 @@
 <body>
   <main class="container" role="main" aria-label="Запрошення на весілля Анастасії та Михайла">
     <header>
+      <div class="photo-frame">
+        <img src="https://i.ibb.co/zTp0DFzW/image.png" alt="Фото пари" />
+      </div>
       <h1>Анастасія та Михайло</h1>
-      <p class="date">19 липня 2025</p>
-      <p>Раді запросити Вас на один з найважливіших днів нашого життя!</p>
+      <section class="calendar" aria-labelledby="calendar-title" style="text-align: center; margin: 30px 0;">
+        <h3
+          style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #977077; letter-spacing: 2px; margin-bottom: 16px;">
+          ЛИПЕНЬ 2025
+        </h3>
+        <div
+          style="display: inline-block; font-family: 'Playfair Display', serif; font-size: 1.1rem; background: #fef5f6; padding: 24px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+          <table style="margin: 0 auto; border-collapse: separate; border-spacing: 10px; text-align: center;">
+            <thead>
+              <tr style="color: #977077;">
+                <th>П</th>
+                <th>В</th>
+                <th>С</th>
+                <th>Ч</th>
+                <th>П</th>
+                <th>С</th>
+                <th>Н</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td style="position: relative;">
+                  <div style="
+      width: 42px; height: 42px;
+      border-radius: 50%; border: 2px solid #b2838c;
+      display: flex; align-items: center; justify-content: center;
+      margin: auto; font-weight: bold; color: #5a4d44;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: linear-gradient(270deg, #ffcfcf, #f6e6e6, #ffcfcf);
+      background-size: 600% 600%;
+    ">
+                    19
+                  </div>
+                </td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+              </tr>
+              <tr>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <h2 id="calendar-title" style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 30px;">
+        Раді запросити Вас на один з найважливіших днів нашого життя!
+      </h2>
     </header>
 
     <section class="wedding-day" aria-labelledby="wedding-day-title">
       <div class="wedding-content">
         <h2 id="wedding-day-title">День нашого весілля</h2>
-        <p>Запрошуємо вас розділити з нами цей особливий момент у ресторан-курорті <strong>“Dubrovsky”</strong>.</p>
         <div class="schedule" aria-label="Розклад весільного дня">
-          <p>15:30 — Welcome zone / Збір гостей</p>
-          <p>16:30 — Початок церемонії</p>
+          <p>Запрошуємо вас розділити з нами цей особливий момент у ресторан-курорті <strong>“Dubrovsky”</strong>.</p>
+          <p><span class="time">15:30 — Збір гостей</span></p>
+          <p><span class="time">16:00 — Церемонія</span></p>
+          <p><span class="time">17:00 — Розпочинаємо весілля</span></p>
         </div>
       </div>
     </section>
@@ -330,12 +550,25 @@
       <p>Нам буде дуже приємно, якщо ви підтримаєте атмосферу нашого свята у своїх образах.</p>
       <div class="palette" aria-label="Рекомендовані кольори одягу">
         <div class="color" style="background-color: #212322;"></div>
-        <div class="color" style="background-color: #D9D9D6;"></div>
         <div class="color" style="background-color: #FFFFFF;"></div>
-        <div class="color" style="background-color: #44693D;"></div>
       </div>
-      <div class="photo-frame">
-        <img src="https://i.ibb.co/k6BNrXqK/image.png" alt="Пара закоханих" />
+      <p
+        style="text-align:center; font-family:'Playfair Display', serif; font-size:2rem; color: #212322; font-style:italic; margin: 20px 0;">
+        Total Black
+      </p>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/Gf0TQCCw/IMG-3339.jpg" alt="Total Black 1" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/WNFPfk4P/IMG-3338.jpg" alt="Total Black 2" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/TBbFKjTJ/IMG-3343.jpg" alt="Total Black 3" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/cSKbYskM/IMG-3344.jpg" alt="Total Black 4" />
+        </div>
       </div>
     </section>
 
@@ -345,6 +578,10 @@
       <p>Замість квітів будемо раді пляшечці вашого улюбленого вина 🍷 — ми залишимо її до річниці.</p>
       <p>А якщо ви хочете зробити подарунок — найкращий подарунок це ваші щирі побажання у конверті 📬</p>
     </section>
+
+    <div class="photo-frame">
+      <img src="https://i.ibb.co/gZXRTT8m/IMG-3233.jpg" alt="Dress code mood" />
+    </div>
 
     <section class="form" aria-labelledby="form-title">
       <div class="form-header">
@@ -369,12 +606,12 @@
           <label><input type="checkbox" name="drinks" value="lemonade" /> Компот / Лимонад</label>
           <label><input type="checkbox" name="drinks" value="nonalcoholic" /> Інше</label>
         </fieldset>
-        <button type="submit">Надіслати анкету</button>
+        <button type="submit" style="font-family: 'Playfair Display'">Надіслати анкету</button>
       </form>
       <p id="status"></p>
     </section>
 
-    <section class="location" aria-labelledby="location-title">
+    <section class="location" aria-labelledby="location-title" style="text-align: center;">
       <h2 id="location-title">Локація</h2>
       <p>Натисніть нижче, щоб побачити місце проведення:</p>
       <a href="https://maps.app.goo.gl/mr4dWmsggUSzqUsZA" target="_blank" rel="noopener noreferrer"
@@ -384,7 +621,7 @@
     </section>
 
     <div class="photo-frame">
-      <img src="https://i.ibb.co/5h2x6mQ6/image.png" alt="Пара закоханих" />
+      <img src="https://i.ibb.co/PsTf6vMf/IMG-3235.jpg" alt="Пара закоханих" />
     </div>
 
     <footer>
