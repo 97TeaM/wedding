@@ -271,7 +271,7 @@
       transition: background-color 0.3s ease, transform 0.2s ease;
       outline: none;
       user-select: none;
-      margin-bottom: 1rem;
+      margin-bottom: 2.9rem;
     }
 
     .location-button:hover {
@@ -290,27 +290,22 @@
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 20px 0;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
     }
 
     .gallery-item {
       position: relative;
-      width: 100%;
       aspect-ratio: 3 / 4;
-      border: 8px solid transparent;
-      background:
-        url("https://www.transparenttextures.com/patterns/flowers.png") repeat,
-        #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      padding: 8px;
+      overflow: hidden;
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     @media (max-width: 600px) {
@@ -327,8 +322,8 @@
     }
 
     :root {
-      --fade-in: fadeIn 1s ease forwards;
-      --slide-up: slideUp 1s ease forwards;
+      --fade-in: fadeIn 2s ease forwards;
+      --slide-up: slideUp 2s ease forwards;
     }
 
     @keyframes fadeIn {
@@ -361,11 +356,6 @@
     .photo-frame img,
     .gallery-item img {
       transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .gallery-item img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
     .wedding-day,
@@ -430,17 +420,16 @@
       will-change: opacity, color;
       user-select: none;
       transition: color 0.3s ease;
+    }
+
+    p:nth-child(1)>.time {
+      animation-delay: 0s;
       color: var(--color-1, #ffffff);
     }
 
     p:nth-child(2)>.time {
       animation-delay: 1s;
       color: var(--color-2, #ffffff);
-    }
-
-    p:nth-child(3)>.time {
-      animation-delay: 2s;
-      color: var(--color-3, #ffffff);
     }
 
     @keyframes blink {
@@ -463,7 +452,7 @@
       <div class="photo-frame">
         <img src="https://i.ibb.co/zTp0DFzW/image.png" alt="Фото пари" />
       </div>
-      <h1>Анастасія та Михайло</h1>
+      <h1>Anastasiia & Mykhailo</h1>
       <section class="calendar" aria-labelledby="calendar-title" style="text-align: center; margin: 30px 0;">
         <h3
           style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #977077; letter-spacing: 2px; margin-bottom: 16px;">
@@ -545,7 +534,7 @@
           </table>
         </div>
       </section>
-      <h2 id="calendar-title" style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 30px;">
+      <h2 id="calendar-title" style="font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 30px;">
         Раді запросити Вас на один з найважливіших днів нашого життя!
       </h2>
     </header>
@@ -557,7 +546,6 @@
           <p>Запрошуємо вас розділити з нами цей особливий момент у ресторан-курорті <strong>“Dubrovsky”</strong>.</p>
           <p><span class="time">15:30 — Збір гостей</span></p>
           <p><span class="time">16:00 — Церемонія</span></p>
-          <p><span class="time">17:00 — Розпочинаємо весілля</span></p>
         </div>
       </div>
     </section>
@@ -594,7 +582,7 @@
 
     <section class="details" aria-labelledby="details-title">
       <h2 id="details-title">Важливі деталі</h2>
-      <p>Будь ласка, підтвердьте свою присутність до <strong>10 червня</strong>.</p>
+      <p>Будь ласка, підтвердьте свою присутність до <strong>15 червня</strong>.</p>
       <p>Замість квітів будемо раді пляшечці вашого улюбленого вина 🍷 — ми залишимо її до річниці.</p>
       <p>А якщо ви хочете зробити подарунок — найкращий подарунок це ваші щирі побажання у конверті 📬</p>
     </section>
@@ -631,12 +619,25 @@
       <p id="status"></p>
     </section>
 
-    <section class="location" aria-labelledby="location-title" style="text-align: center;">
+    <section class="location" aria-labelledby="location-title" style="text-align: center; margin: 40px 0;">
       <h2 id="location-title">Локація</h2>
       <p>Натисніть нижче, щоб побачити місце проведення:</p>
       <a href="https://maps.app.goo.gl/mr4dWmsggUSzqUsZA" target="_blank" rel="noopener noreferrer"
-        class="location-button" aria-label="Відкрити локацію на мапі">
+        class="location-button" style="margin-bottom: 0%" aria-label="Відкрити локацію на мапі">
         📍 Відкрити на мапі
+      </a>
+    </section>
+
+    <div class="photo-frame">
+      <img src="https://i.ibb.co/xtR4tPR2/IMG-3232.jpg" alt="Пара закоханих" />
+    </div>
+
+    <section class="live-stream" style="text-align: center;">
+      <h2>Онлайн трансляція</h2>
+      <p>Якщо не можете бути з нами особисто — приєднуйтесь онлайн 💻</p>
+      <a href="https://us04web.zoom.us/j/77875166343?pwd=JfJUoH6If9amZ47xXy70oPb8u79RPC.1" target="_blank"
+        rel="noopener noreferrer" class="location-button" aria-label="Перейти до трансляції">
+        🔗 Перейти до трансляції
       </a>
     </section>
 
