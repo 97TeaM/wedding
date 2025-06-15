@@ -174,6 +174,22 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
+    .photo-title {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ffffff;
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      font-weight: normal;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      margin: 0;
+      z-index: 2;
+      animation: fadeIn 2s ease forwards;
+      color: #4b3d36;
+    }
+
     .photo-frame {
       width: 108.5%;
       display: flex;
@@ -449,20 +465,46 @@
 <body>
   <main class="container" role="main" aria-label="Запрошення на весілля Анастасії та Михайла">
     <header>
-      <div class="photo-frame">
-        <img src="https://i.ibb.co/zTp0DFzW/image.png" alt="Фото пари" />
-      </div>
-      <h1>Anastasiia & Mykhailo</h1>
-      <section class="calendar" aria-labelledby="calendar-title" style="text-align: center; margin: 30px 0;">
-        <h3
-          style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #977077; letter-spacing: 2px; margin-bottom: 16px;">
-          ЛИПЕНЬ 2025
-        </h3>
-        <div
-          style="display: inline-block; font-family: 'Playfair Display', serif; font-size: 1.1rem; background: #fef5f6; padding: 24px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-          <table style="margin: 0 auto; border-collapse: separate; border-spacing: 10px; text-align: center;">
+      <div class="photo-frame" style="position: relative; display: inline-block;">
+        <img src="https://i.ibb.co/RGJMPsMH/imageedit-1-3537220166.png" alt="Фото пари" />
+        <h1 class="photo-title"
+          style="position: absolute; top: 4%; left: 50%; color: #ffffffff; text-shadow: 0 0 3px rgb(0, 0, 0);">
+          Anastasiia & Mykhailo
+        </h1>
+        <section class="calendar" aria-labelledby="calendar-title" style="
+                position: absolute;
+                top: 78%;
+                left: 50%;
+                transform: translate(-50%, -40%);
+                background: rgba(255 255 255 / 0.1);
+                color: #f0e6e6;
+                font-family: 'Playfair Display', serif;
+                font-size: 1.6rem;
+                padding: 20px 300px;
+                border-radius: 1000px 1000px 0 0;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(4px);
+                box-shadow: none;
+                text-align: center;
+                user-select: none;
+                width: max-content;
+                min-width: 320px;
+              ">
+          <h3 id="calendar-title"
+            style="font-size: 2.2rem; margin-bottom: 20px; color: #ffffffa6; font-weight: 700; letter-spacing: 3px;">
+            ЛИПЕНЬ 2025
+          </h3>
+          <table style="
+                    margin: 0 auto;
+                    border-collapse: separate;
+                    border-spacing: 8px;
+                    text-align: center;
+                    color: #ffffffff;
+                    font-weight: 600;
+                    font-size: 1.5rem;
+                  ">
             <thead>
-              <tr style="color: #977077;">
+              <tr style="color: #ffffffa6; font-size: 1.4rem;">
                 <th>П</th>
                 <th>В</th>
                 <th>С</th>
@@ -499,14 +541,21 @@
                 <td>18</td>
                 <td style="position: relative;">
                   <div style="
-      width: 42px; height: 42px;
-      border-radius: 50%; border: 2px solid #b2838c;
-      display: flex; align-items: center; justify-content: center;
-      margin: auto; font-weight: bold; color: #5a4d44;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      background: linear-gradient(270deg, #ffcfcf, #f6e6e6, #ffcfcf);
-      background-size: 600% 600%;
-    ">
+                            width: 48px;
+                            height: 48px;
+                            border-radius: 50%;
+                            border: 2px solid #ffffff;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: auto;
+                            font-weight: bold;
+                            color: #ffffff;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+                            background: linear-gradient(270deg, #848484, #ffffff, #79868b42);
+                            background-size: 600% 600%;
+                            font-size: 1.4rem;
+                          ">
                     19
                   </div>
                 </td>
@@ -532,8 +581,9 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </section>
+        </section>
+      </div>
+      </div>
       <h2 id="calendar-title" style="font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 30px;">
         Раді запросити Вас на один з найважливіших днів нашого життя!
       </h2>
@@ -582,7 +632,7 @@
 
     <section class="details" aria-labelledby="details-title">
       <h2 id="details-title">Важливі деталі</h2>
-      <p>Будь ласка, підтвердьте свою присутність до <strong>15 червня</strong>.</p>
+      <p>Будь ласка, підтвердьте свою присутність до <strong>21 червня</strong>.</p>
       <p>Замість квітів будемо раді пляшечці вашого улюбленого вина 🍷 — ми залишимо її до річниці.</p>
       <p>А якщо ви хочете зробити подарунок — найкращий подарунок це ваші щирі побажання у конверті 📬</p>
     </section>
