@@ -462,14 +462,16 @@
     }
 
     .photo-frame1 {
-      position: relative;
-      margin: 0 auto;
-      width: 65%;
-      max-width: 600px;
+      width: 108.5%;
       display: flex;
       text-align: center;
       justify-content: center;
       align-items: center;
+      margin-top: -30px;
+      margin-bottom: 20px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .photo-frame1 img {
@@ -483,7 +485,7 @@
 
     @media (max-width: 768px) {
       .photo-frame1 {
-        width: 90%;
+        width: 112%;
       }
     }
   </style>
@@ -493,7 +495,7 @@
 <body>
   <main class="container" role="main" aria-label="Запрошення на весілля Анастасії та Михайла">
     <header>
-      <div class="photo-frame1" style="position: relative; display: inline-block;">
+      <div class="photo-frame1">
         <img src="https://i.ibb.co/hFngpZJb/image.png" alt="Фото пари">
       </div>
       <h2 id="calendar-title" style="font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 30px;">
